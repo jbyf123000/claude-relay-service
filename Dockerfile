@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # 🔽 安装依赖 (生产环境) - 使用 BuildKit 缓存加速
-RUN npm ci --only=production
+RUN npm ci
 
 # 🎯 前端构建阶段 (与后端依赖并行)
 FROM node:18-alpine AS frontend-builder
